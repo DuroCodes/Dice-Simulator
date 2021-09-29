@@ -5,7 +5,7 @@ resultsFileName = "results.txt"
 
 def genDice(numDice):
   dice = []
-  
+
   for _ in range(numDice):
     dice.append(randint(1, 6))  
   
@@ -45,13 +45,13 @@ print(c(title[5],"magenta"))
 
 clearFile()
 
-NUM_DICE = int(input("\nInput how many dice you want to roll (1-100): "))
+NUM_DICE = int(input("\nInput how many dice you want to roll: "))
 NUM_SIMS = int(input("How many times do you want to simulate? (higher = more accurate): "))
 DO_PRINT = input("Do you want to print the number of dice rolled? (Y/n): ")
 
 for _ in range(NUM_SIMS):
   if(DO_PRINT.lower() in ["yes", "ye", "y"]):
-    print(f"{_+1}/{NUM_SIMS} dice rolled... ({(_+1)/NUM_SIMS*100}%)")
+    print(f"{_+1}/{NUM_SIMS} dice rolled... ({round((_+1)/NUM_SIMS*100, 1)}%)")
     genDice(NUM_DICE)
   else:
     genDice(NUM_DICE)
